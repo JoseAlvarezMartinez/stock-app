@@ -62,6 +62,9 @@ function App() {
           ))}
         {productosFiltrados.length === 0 && <h2>No existe</h2>}
       </div>
+      <div className="agregarProducto">
+        +
+      </div>
     </>
   );
 }

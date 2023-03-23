@@ -42,3 +42,21 @@ body {
   text-align: center;
   
 }
+.agregarProducto{
+  width: 2.5rem;
+  height:2.5rem;
+  border-radius: 50%;
+  background-color: hsl(215, 51%, 31%);
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all .3s;
+}
+.agregarProducto:hover{
+  transform: scale(1.10);
+}
