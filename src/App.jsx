@@ -17,9 +17,6 @@ function App() {
     setProductoFiltrado(filtrado);
   }, [productoInput]);
 
-  useEffect(() => {
-    localStorage.setItem("productos", JSON.stringify(productosStock));
-  }, [productosStock]);
   return (
     <>
       <h1 className="stock">Control de Stock</h1>
