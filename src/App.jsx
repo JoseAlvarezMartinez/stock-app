@@ -3,16 +3,23 @@ import Card from "./components/Card";
 import { productos } from "./productos";
 import { useState, useEffect } from "react";
 function App() {
-  const [productosStock, setProductosStock] = useState(productos);
+  const [productosStock, setProductosStock] = useState(
+    JSON.parse(localStorage.getItem("productos")) ?? productos
+  );
   const [productoFiltrado, setProductoFiltrado] = useState([]);
   const [productoInput, setProductoInput] = useState("");
   const [cardId, setCardId] = useState(null);
+
   useEffect(() => {
     const filtrado = productosStock.filter((producto) =>
       producto.nombre.toLowerCase().includes(productoInput)
     );
     setProductoFiltrado(filtrado);
   }, [productoInput]);
+
+  useEffect(() => {
+    localStorage.setItem("productos", JSON.stringify(productosStock));
+  }, [productosStock]);
   return (
     <>
       <h1 className="stock">Control de Stock</h1>
@@ -22,14 +29,20 @@ function App() {
         placeholder="Buscar Producto"
       />
       <div className="CardContainer">
-        {productoFiltrado &&
-          productoFiltrado.map((producto) => (
-            <Card setCardId={setCardId} cardId={cardId} key={producto.nombre} producto={producto} />
-          ))}
-        {!productoInput &&
-          productosStock.map((producto) => (
-            <Card key={producto.nombre} producto={producto} />
-          ))}
+        {productoFiltrado
+          ? productoFiltrado.map((producto) => (
+              <Card
+                setCardId={setCardId}
+                cardId={cardId}
+                key={producto.nombre}
+                producto={producto}
+                productosStock={productosStock}
+              />
+            ))
+          : productosStock.map((producto) => (
+              <Card key={producto.nombre} producto={producto} />
+            ))}
+        {}
         {productoFiltrado.length === 0 && <h2>El producto no esta en stock</h2>}
       </div>
     </>

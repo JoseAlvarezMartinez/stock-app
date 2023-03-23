@@ -2,12 +2,13 @@ import styles from "./Card.module.css";
 import { useState, useEffect } from "react";
 import { SlOptionsVertical } from "react-icons/sl";
 import CardImg from "../assets/cardImg.png";
-const Card = ({ setCardId, cardId, producto }) => {
+const Card = ({ setCardId, cardId, producto, productosStock }) => {
   const [cantidad, setCantidad] = useState(producto.cantidad);
   const [opciones, setOpciones] = useState(false);
 
   useEffect(() => {
     producto.cantidad = cantidad;
+    localStorage.setItem("productos", JSON.stringify(productosStock));
   }, [cantidad]);
   useEffect(() => {
     if (cardId == producto.nombre) {
