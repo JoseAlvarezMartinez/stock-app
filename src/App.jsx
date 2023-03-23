@@ -2,7 +2,9 @@ import "./App.css";
 import Card from "./components/Card";
 import { productos } from "./productos";
 import { useState, useEffect } from "react";
+import Modal from "./components/Modal";
 function App() {
+  const [modal, setModal] = useState(false);
   const [cardId, setCardId] = useState(null);
   const [inputBuscador, setInputBuscador] = useState("");
   const [productosStock, setProductosStock] = useState(
@@ -27,7 +29,7 @@ function App() {
     setProductosFiltrados(filtrando);
   }, [inputBuscador]);
   return (
-    <>
+    <main className="productosMain">
       <h1 className="stock">Control de Stock</h1>
       <div className="inputContainer">
         <input
@@ -38,34 +40,35 @@ function App() {
       </div>
       <div className="inputContainer"></div>
       <div className="CardContainer">
-        {inputBuscador.length > 0 &&
-          productosFiltrados.map((producto) => (
-            <Card
-              setCardId={setCardId}
-              cardId={cardId}
-              key={producto.nombre}
-              producto={producto}
-              productosStock={productosStock}
-              eliminarProducto={eliminarProducto}
-            />
-          ))}
-        {!inputBuscador &&
-          productosStock.map((producto) => (
-            <Card
-              setCardId={setCardId}
-              cardId={cardId}
-              key={producto.nombre}
-              producto={producto}
-              productosStock={productosStock}
-              eliminarProducto={eliminarProducto}
-            />
-          ))}
+        {inputBuscador.length > 0
+          ? productosFiltrados.map((producto) => (
+              <Card
+                setCardId={setCardId}
+                cardId={cardId}
+                key={producto.nombre}
+                producto={producto}
+                productosStock={productosStock}
+                eliminarProducto={eliminarProducto}
+              />
+            ))
+          : productosStock.map((producto) => (
+              <Card
+                setCardId={setCardId}
+                cardId={cardId}
+                key={producto.nombre}
+                producto={producto}
+                productosStock={productosStock}
+                eliminarProducto={eliminarProducto}
+              />
+            ))}
+
         {productosFiltrados.length === 0 && <h2>No existe</h2>}
       </div>
-      <div className="agregarProducto">
+      <div className="agregarProducto" onClick={() => setModal(true)}>
         +
       </div>
-    </>
+      {modal && <Modal />}
+    </main>
   );
 }
 

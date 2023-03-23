@@ -60,3 +60,6 @@ body {
 .agregarProducto:hover{
   transform: scale(1.10);
 }
+.productosMain{
+  position: relative;
+}
