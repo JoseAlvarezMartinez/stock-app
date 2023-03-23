@@ -17,6 +17,11 @@ import Tetinas from "./assets/tetinas.png";
 import Butter from "./assets/butter.png";
 import Ink from "./assets/ink.png";
 import Jabon from "./assets/jabon.png";
+import Gillette from "./assets/gillette.png";
+import CintaFlex from "./assets/cintaflex.png";
+import Rollo from "./assets/rollo.png";
+import VasosDescartables from "./assets/vasosDescartables.png";
+
 export const productos = [
   {
     nombre: "Agujas 7rl",
@@ -132,17 +137,21 @@ export const productos = [
   {
     nombre: "Gilettes",
     cantidad: 0,
+    img:Gillette
   },
   {
     nombre: "Cinta flex",
     cantidad: 0,
+    img:CintaFlex
   },
   {
     nombre: "Rollo de cocina",
     cantidad: 0,
+    img:Rollo
   },
   {
     nombre: "Vasos descartables",
     cantidad: 0,
+    img:VasosDescartables
   },
 ];
