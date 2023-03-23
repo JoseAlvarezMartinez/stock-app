@@ -5,7 +5,7 @@ import CardImg from "../assets/cardImg.png";
 const Card = ({ setCardId, cardId, producto, productosStock }) => {
   const [cantidad, setCantidad] = useState(producto.cantidad);
   const [opciones, setOpciones] = useState(false);
-
+  console.log(producto?.img)
   useEffect(() => {
     producto.cantidad = cantidad;
     localStorage.setItem("productos", JSON.stringify(productosStock));
