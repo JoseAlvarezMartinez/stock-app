@@ -1,3 +1,6 @@
-*{
-  font-family: 'Poppins', sans-serif;
+* {
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color:  hsl(217, 54%, 11%)
 }

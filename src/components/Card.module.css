@@ -1,0 +1,10 @@
+.card {
+  width: 15rem;
+  height: 25rem;
+  background-color: hsl(216, 50%, 16%);
+  border-radius: 0.5rem;
+}
+.tituloCard {
+  color: #fff;
+  font-weight: 300;
+}
