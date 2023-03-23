@@ -3,6 +3,7 @@
   height: 25rem;
   background-color: hsl(216, 50%, 16%);
   border-radius: 0.5rem;
+  margin: 1rem 0;
 }
 .cardContainer {
   display: flex;
@@ -19,6 +20,7 @@
 }
 .cardImg {
   width: 60%;
+  height: 9rem;
   margin-bottom: 3rem;
 }
 .cantidades {
@@ -98,7 +100,8 @@
   font-weight: 300;
   font-size: 0.8rem;
   opacity: 1;
-  animation: animationParrafo 2.5s ease 0s 1 normal none;
+  animation: animationParrafo 2s ease 0s 1 normal none;
+  cursor: pointer;
 }
 .test {
   display: flex;
