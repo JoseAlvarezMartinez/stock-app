@@ -6,6 +6,7 @@ function App() {
   const [productosStock, setProductosStock] = useState(productos);
   const [productoFiltrado, setProductoFiltrado] = useState([]);
   const [productoInput, setProductoInput] = useState("");
+  const [cardId, setCardId] = useState(null);
   useEffect(() => {
     const filtrado = productosStock.filter((producto) =>
       producto.nombre.toLowerCase().includes(productoInput)
@@ -23,7 +24,7 @@ function App() {
       <div className="CardContainer">
         {productoFiltrado &&
           productoFiltrado.map((producto) => (
-            <Card key={producto.nombre} producto={producto} />
+            <Card setCardId={setCardId} cardId={cardId} key={producto.nombre} producto={producto} />
           ))}
         {!productoInput &&
           productosStock.map((producto) => (

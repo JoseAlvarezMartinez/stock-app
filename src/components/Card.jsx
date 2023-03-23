@@ -2,18 +2,27 @@ import styles from "./Card.module.css";
 import { useState, useEffect } from "react";
 import { SlOptionsVertical } from "react-icons/sl";
 import CardImg from "../assets/cardImg.png";
-const Card = ({ producto }) => {
+const Card = ({ setCardId, cardId, producto }) => {
   const [cantidad, setCantidad] = useState(producto.cantidad);
   const [opciones, setOpciones] = useState(false);
 
   useEffect(() => {
     producto.cantidad = cantidad;
   }, [cantidad]);
+  useEffect(() => {
+    if (cardId == producto.nombre) {
+      return setOpciones(true);
+    }
+    setOpciones(false);
+  }, [cardId]);
   return (
     <div className={styles.card}>
       <div className={styles.options}>
         <SlOptionsVertical
-          onClick={() => setOpciones(!opciones)}
+          onClick={() => {
+            setCardId(producto.nombre);
+            setOpciones(!opciones);
+          }}
           color="#fff"
         />
       </div>

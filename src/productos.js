@@ -11,7 +11,8 @@ export const productos = [
   {
     nombre: "Cartuchos 7rl",
     cantidad: 0,
-    img:Cartuchos3rl
+    img:Cartuchos3rl,
+    
   },
   {
     nombre: "Agujas 3rl",
