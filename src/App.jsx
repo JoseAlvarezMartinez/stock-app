@@ -3,15 +3,33 @@ import Card from "./components/Card";
 import { productos } from "./productos";
 import { useState, useEffect } from "react";
 function App() {
-  const [productosArray, setProductosArray] = useState([]);
-
+  const [productosStock, setProductosStock] = useState(productos);
+  const [productoFiltrado, setProductoFiltrado] = useState([]);
+  const [productoInput, setProductoInput] = useState("");
+  useEffect(() => {
+    const filtrado = productosStock.filter((producto) =>
+      producto.nombre.toLowerCase().includes(productoInput)
+    );
+    setProductoFiltrado(filtrado);
+  }, [productoInput]);
   return (
     <>
       <h1 className="stock">Control de Stock</h1>
+      <input
+        onChange={(e) => setProductoInput(e.target.value.toLowerCase())}
+        type="text"
+        placeholder="Buscar Producto"
+      />
       <div className="CardContainer">
-        {productos.map((producto) => (
-          <Card producto={producto} />
-        ))}
+        {productoFiltrado &&
+          productoFiltrado.map((producto) => (
+            <Card key={producto.nombre} producto={producto} />
+          ))}
+        {!productoInput &&
+          productosStock.map((producto) => (
+            <Card key={producto.nombre} producto={producto} />
+          ))}
+        {productoFiltrado.length === 0 && <h2>El producto no esta en stock</h2>}
       </div>
     </>
   );

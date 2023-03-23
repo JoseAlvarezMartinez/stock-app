@@ -34,17 +34,19 @@ const Card = ({ producto }) => {
           className={styles.cardImg}
         />
         <div className={styles.linea}></div>
-        <h2 className={styles.tituloCard}>{producto.nombre}</h2>
+        <div>
+          <h2 className={styles.tituloCard}>{producto.nombre}</h2>
 
-        <div className={styles.contenedorCantidades}>
-          <button
-            disabled={cantidad == 0}
-            onClick={() => setCantidad(cantidad - 1)}
-          >
-            -
-          </button>
-          <p className={styles.cantidades}>{cantidad}</p>
-          <button onClick={() => setCantidad(cantidad + 1)}>+</button>
+          <div className={styles.contenedorCantidades}>
+            <button
+              disabled={cantidad == 0}
+              onClick={() => setCantidad(cantidad - 1)}
+            >
+              -
+            </button>
+            <p className={styles.cantidades}>{cantidad}</p>
+            <button onClick={() => setCantidad(cantidad + 1)}>+</button>
+          </div>
         </div>
       </div>
     </div>
