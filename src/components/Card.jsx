@@ -1,10 +1,16 @@
 import styles from "./Card.module.css";
 import { useState, useEffect } from "react";
 import { SlOptionsVertical } from "react-icons/sl";
-const Card = ({ setCardId, cardId, producto, productosStock }) => {
+const Card = ({
+  setCardId,
+  cardId,
+  producto,
+  productosStock,
+  eliminarProducto,
+}) => {
   const [cantidad, setCantidad] = useState(producto.cantidad);
   const [opciones, setOpciones] = useState(false);
-  console.log(producto?.img)
+
   useEffect(() => {
     producto.cantidad = cantidad;
     localStorage.setItem("productos", JSON.stringify(productosStock));
@@ -33,7 +39,9 @@ const Card = ({ setCardId, cardId, producto, productosStock }) => {
           } `}
         >
           <p>Editar Cantidades</p>
-          <p>Eliminar Articulo</p>
+          <p onClick={() => eliminarProducto(producto.nombre)}>
+            Eliminar Articulo
+          </p>
         </div>
       </div>
       <div className={styles.cardContainer}>

@@ -3,50 +3,37 @@ import Card from "./components/Card";
 import { productos } from "./productos";
 import { useState, useEffect } from "react";
 function App() {
+  const [cardId, setCardId] = useState(null);
   const [productosStock, setProductosStock] = useState(
     JSON.parse(localStorage.getItem("productos")) ?? productos
   );
-  const [productoFiltrado, setProductoFiltrado] = useState([]);
-  const [productoInput, setProductoInput] = useState("");
-  const [cardId, setCardId] = useState(null);
 
-  useEffect(() => {
-    const filtrado = productosStock.filter((producto) =>
-      producto.nombre.toLowerCase().includes(productoInput)
+  function eliminarProducto(id) {
+    const filtrado = productosStock.filter(
+      (producto) => producto.nombre !== id
     );
-    setProductoFiltrado(filtrado);
-  }, [productoInput]);
+    setProductosStock(filtrado);
+  }
 
   useEffect(() => {
+    localStorage.setItem("productos", JSON.stringify(productosStock));
+  }, [productosStock]);
 
-    localStorage.setItem("productos",JSON.stringify(productos))
-  },[productos])
   return (
     <>
       <h1 className="stock">Control de Stock</h1>
-      <div className="inputContainer">
-        <input
-          onChange={(e) => setProductoInput(e.target.value.toLowerCase())}
-          type="text"
-          placeholder="Buscar Producto..."
-        />
-      </div>
+      <div className="inputContainer"></div>
       <div className="CardContainer">
-        {productoFiltrado
-          ? productoFiltrado.map((producto) => (
-              <Card
-                setCardId={setCardId}
-                cardId={cardId}
-                key={producto.nombre}
-                producto={producto}
-                productosStock={productosStock}
-              />
-            ))
-          : productosStock.map((producto) => (
-              <Card key={producto.nombre} producto={producto} />
-            ))}
-        {}
-        {productoFiltrado.length === 0 && <h2 className="noStock">El producto no esta en stock.</h2>}
+        {productosStock.map((producto) => (
+          <Card
+            setCardId={setCardId}
+            cardId={cardId}
+            key={producto.nombre}
+            producto={producto}
+            productosStock={productosStock}
+            eliminarProducto={eliminarProducto}
+          />
+        ))}
       </div>
     </>
   );
