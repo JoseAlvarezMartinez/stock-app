@@ -20,11 +20,13 @@ function App() {
   return (
     <>
       <h1 className="stock">Control de Stock</h1>
-      <input
-        onChange={(e) => setProductoInput(e.target.value.toLowerCase())}
-        type="text"
-        placeholder="Buscar Producto"
-      />
+      <div className="inputContainer">
+        <input
+          onChange={(e) => setProductoInput(e.target.value.toLowerCase())}
+          type="text"
+          placeholder="Buscar Producto..."
+        />
+      </div>
       <div className="CardContainer">
         {productoFiltrado
           ? productoFiltrado.map((producto) => (
@@ -40,7 +42,7 @@ function App() {
               <Card key={producto.nombre} producto={producto} />
             ))}
         {}
-        {productoFiltrado.length === 0 && <h2>El producto no esta en stock</h2>}
+        {productoFiltrado.length === 0 && <h2 className="noStock">El producto no esta en stock</h2>}
       </div>
     </>
   );

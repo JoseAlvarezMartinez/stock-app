@@ -5,11 +5,10 @@
 body {
   background-color: hsl(217, 54%, 11%);
 }
-.stock{
+.stock {
   text-align: center;
   color: #fff;
   padding: 1rem 0;
-
 }
 .CardContainer {
   display: flex;
@@ -19,4 +18,26 @@ body {
   justify-content: center;
   gap: 1rem;
   align-items: center;
+}
+.inputContainer{
+  display: flex;
+  justify-content: center;
+}
+.inputContainer input{
+  height: 2rem;
+  width: 15rem;
+  border: none;
+  outline: none;
+  border-radius: .2rem;
+  padding-left: 1rem;
+  font-weight: 300;
+  transition: transform .5s;
+}
+.inputContainer input:focus{
+  transform: scale(1.05);
+}
+.noStock{
+  color: #fff;
+  font-weight: 300;
+  text-align: center;
 }
