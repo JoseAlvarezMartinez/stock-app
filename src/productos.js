@@ -2,6 +2,10 @@ import Agujas7rl from "./assets/agujas7rl.png";
 import Aguja3l from "./assets/3rl.png";
 import Cartuchos3rl from "./assets/cartucho3rl.png";
 import Punteras from "./assets/puntera.png";
+import BandasElasticas from "./assets/bandaselasticas.png";
+import CubreMaquinas from "./assets/cubremaquinas.png";
+import ClipCord from "./assets/clipcord.png";
+import Grommets from "./assets/grommets.png";
 export const productos = [
   {
     nombre: "Agujas 7rl",
@@ -37,22 +41,27 @@ export const productos = [
   {
     nombre: "Bandas elasticas",
     cantidad: 0,
+    img:BandasElasticas
   },
   {
     nombre: "Cubre maquinas",
     cantidad: 0,
+    img:CubreMaquinas
   },
   {
     nombre: "Cubre pen",
     cantidad: 0,
+    img:CubreMaquinas
   },
   {
-    nombre: "Cubre clipcord",
+    nombre: "Cubre clip   cord",
     cantidad: 0,
+    img:ClipCord
   },
   {
-    nombre: "Groomets",
+    nombre: "Grommets",
     cantidad: 0,
+    img:Grommets
   },
   {
     nombre: "Film",
