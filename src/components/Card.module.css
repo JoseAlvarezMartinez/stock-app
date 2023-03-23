@@ -4,16 +4,37 @@
   background-color: hsl(216, 50%, 16%);
   border-radius: 0.5rem;
 }
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+}
 .tituloCard {
   color: #fff;
   font-weight: 300;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 3.5rem;
+}
+.cardImg {
+  width: 60%;
 }
 .cantidades {
   color: #fff;
   margin: 0 2rem;
 }
 .contenedorCantidades {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contenedorCantidades button {
+  cursor: pointer;
+  background-color: hsl(217, 53%, 7%);
+  border: none;
+  border-radius: 0.2rem;
+  color: #fff;
+  padding: 0.2rem 0.5rem;
 }
