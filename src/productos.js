@@ -12,6 +12,11 @@ import Nitrilo from "./assets/nitrilo.png";
 import BajaLengua from "./assets/bajaLenguaI.png";
 import Compresas from "./assets/compresas.png";
 import PapelHectografico from "./assets/papelhectografico.png";
+import Tinta from "./assets/tinta.png";
+import Tetinas from "./assets/tetinas.png";
+import Butter from "./assets/butter.png";
+import Ink from "./assets/ink.png";
+import Jabon from "./assets/jabon.png";
 export const productos = [
   {
     nombre: "Agujas 7rl",
@@ -102,22 +107,27 @@ export const productos = [
   {
     nombre: "Tinta",
     cantidad: 0,
+    img:Tinta
   },
   {
     nombre: "Tetinas",
     cantidad: 0,
+    img:Tetinas
   },
   {
     nombre: "Butter",
     cantidad: 0,
+    img:Butter
   },
   {
     nombre: "Stencil transfer",
     cantidad: 0,
+    img:Ink
   },
   {
     nombre: "Jabon liquido",
     cantidad: 0,
+    img:Jabon
   },
   {
     nombre: "Gilettes",
