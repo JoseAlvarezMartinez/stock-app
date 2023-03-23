@@ -1,7 +1,7 @@
 import Agujas7rl from "./assets/agujas7rl.png";
-import Cartuchos7rl from "./assets/cartuchos7rl.png";
 import Aguja3l from "./assets/3rl.png";
 import Cartuchos3rl from "./assets/cartucho3rl.png";
+import Punteras from "./assets/puntera.png";
 export const productos = [
   {
     nombre: "Agujas 7rl",
@@ -11,8 +11,7 @@ export const productos = [
   {
     nombre: "Cartuchos 7rl",
     cantidad: 0,
-    img:Cartuchos3rl,
-    
+    img: Cartuchos3rl,
   },
   {
     nombre: "Agujas 3rl",
@@ -23,16 +22,17 @@ export const productos = [
   {
     nombre: "Cartuchos 3rl",
     cantidad: 0,
-    img:Cartuchos3rl
+    img: Cartuchos3rl,
   },
   {
     nombre: "Cartuchos 9rs",
     cantidad: 0,
-    img:Cartuchos3rl
+    img: Cartuchos3rl,
   },
   {
     nombre: "Punteras",
     cantidad: 0,
+    img:Punteras
   },
   {
     nombre: "Bandas elasticas",

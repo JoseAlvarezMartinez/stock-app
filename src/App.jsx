@@ -42,7 +42,7 @@ function App() {
               <Card key={producto.nombre} producto={producto} />
             ))}
         {}
-        {productoFiltrado.length === 0 && <h2 className="noStock">El producto no esta en stock</h2>}
+        {productoFiltrado.length === 0 && <h2 className="noStock">El producto no esta en stock.</h2>}
       </div>
     </>
   );
