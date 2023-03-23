@@ -6,6 +6,12 @@ import BandasElasticas from "./assets/bandaselasticas.png";
 import CubreMaquinas from "./assets/cubremaquinas.png";
 import ClipCord from "./assets/clipcord.png";
 import Grommets from "./assets/grommets.png";
+import Film from "./assets/film.png";
+import Latex from "./assets/latex.png";
+import Nitrilo from "./assets/nitrilo.png";
+import BajaLengua from "./assets/bajaLenguaI.png";
+import Compresas from "./assets/compresas.png";
+import PapelHectografico from "./assets/papelhectografico.png";
 export const productos = [
   {
     nombre: "Agujas 7rl",
@@ -36,56 +42,62 @@ export const productos = [
   {
     nombre: "Punteras",
     cantidad: 0,
-    img:Punteras
+    img: Punteras,
   },
   {
     nombre: "Bandas elasticas",
     cantidad: 0,
-    img:BandasElasticas
+    img: BandasElasticas,
   },
   {
     nombre: "Cubre maquinas",
     cantidad: 0,
-    img:CubreMaquinas
+    img: CubreMaquinas,
   },
   {
     nombre: "Cubre pen",
     cantidad: 0,
-    img:CubreMaquinas
+    img: CubreMaquinas,
   },
   {
     nombre: "Cubre clip   cord",
     cantidad: 0,
-    img:ClipCord
+    img: ClipCord,
   },
   {
     nombre: "Grommets",
     cantidad: 0,
-    img:Grommets
+    img: Grommets,
   },
   {
     nombre: "Film",
     cantidad: 0,
+    img: Film,
   },
   {
     nombre: "Guantes latex",
     cantidad: 0,
+    img: Latex,
   },
   {
     nombre: "Guantes nitrilo",
     cantidad: 0,
+    img: Nitrilo,
   },
   {
-    nombre: "Baja lenguas",
+    nombre: "Baja lengua",
     cantidad: 0,
+    img:BajaLengua
   },
   {
     nombre: "Compresas",
     cantidad: 0,
+    img:Compresas
   },
   {
     nombre: "Papel hectografico",
     cantidad: 0,
+    img:PapelHectografico
   },
   {
     nombre: "Tinta",

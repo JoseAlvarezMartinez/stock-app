@@ -1,7 +1,6 @@
 import styles from "./Card.module.css";
 import { useState, useEffect } from "react";
 import { SlOptionsVertical } from "react-icons/sl";
-import CardImg from "../assets/cardImg.png";
 const Card = ({ setCardId, cardId, producto, productosStock }) => {
   const [cantidad, setCantidad] = useState(producto.cantidad);
   const [opciones, setOpciones] = useState(false);
