@@ -1,13 +1,28 @@
 import styles from "./Card.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { SlOptionsVertical } from "react-icons/sl";
 import CardImg from "../assets/cardImg.png";
 const Card = () => {
   const [cantidad, setCantidad] = useState(0);
+  const [opciones, setOpciones] = useState(false);
+
   return (
     <div className={styles.card}>
       <div className={styles.options}>
-        <SlOptionsVertical color="#fff" />
+        <SlOptionsVertical
+          onClick={() => setOpciones(!opciones)}
+          color="#fff"
+        />
+      </div>
+      <div className={styles.test}>
+        <div
+          className={`${
+            opciones ? styles.opcionesActivas : styles.opcionesInactivas
+          } `}
+        >
+          <p>Eliminar Articulo</p>
+          <p>Editar Cantidades</p>
+        </div>
       </div>
       <div className={styles.cardContainer}>
         <img
@@ -15,7 +30,7 @@ const Card = () => {
           alt="Imagen del producto"
           className={styles.cardImg}
         />
-      <div className={styles.linea}></div>
+        <div className={styles.linea}></div>
         <h2 className={styles.tituloCard}>Nombre del Producto</h2>
 
         <div className={styles.contenedorCantidades}>
