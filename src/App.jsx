@@ -17,6 +17,7 @@ function App() {
     );
     setProductosStock(filtrado);
   }
+
   useEffect(() => {
     localStorage.setItem("productos", JSON.stringify(productosStock));
   }, [productosStock]);
@@ -62,7 +63,9 @@ function App() {
               />
             ))}
 
-        {productosFiltrados.length === 0 && <h2 className="noStock">El producto no se encuentra en stock.</h2>}
+        {productosFiltrados.length === 0 && (
+          <h2 className="noStock">El producto no se encuentra en stock.</h2>
+        )}
       </div>
       <div className="agregarProducto" onClick={() => setModal(true)}>
         +
