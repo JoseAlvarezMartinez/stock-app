@@ -32,6 +32,7 @@ function App() {
   return (
     <main className="productosMain">
       <h1 className="stock">Control de Stock</h1>
+
       <div className="inputContainer">
         <input
           onChange={(e) => setInputBuscador(e.target.value.toLowerCase())}
