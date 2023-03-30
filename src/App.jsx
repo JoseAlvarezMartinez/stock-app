@@ -31,6 +31,7 @@ function App() {
   }, [inputBuscador]);
   return (
     <main className="productosMain">
+      {modal && <Modal />}
       <h1 className="stock">Control de Stock</h1>
 
       <div className="inputContainer">
@@ -71,7 +72,6 @@ function App() {
       <div className="agregarProducto" onClick={() => setModal(true)}>
         +
       </div>
-      {modal && <Modal />}
     </main>
   );
 }
