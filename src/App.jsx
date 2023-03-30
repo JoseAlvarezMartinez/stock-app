@@ -29,9 +29,12 @@ function App() {
 
     setProductosFiltrados(filtrando);
   }, [inputBuscador]);
+
   return (
     <main className="productosMain">
-      {modal && <Modal />}
+      {modal && (
+        <Modal setModal={setModal} setProductosStock={setProductosStock} />
+      )}
       <h1 className="stock">Control de Stock</h1>
 
       <div className="inputContainer">

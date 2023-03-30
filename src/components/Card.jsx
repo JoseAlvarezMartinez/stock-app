@@ -32,13 +32,12 @@ const Card = ({
           color="#fff"
         />
       </div>
-      <div className={styles.test}>
+      <div className={styles.menu}>
         <div
           className={`${
             opciones ? styles.opcionesActivas : styles.opcionesInactivas
           } `}
         >
-          <p>Editar Cantidades</p>
           <p onClick={() => eliminarProducto(producto.nombre)}>
             Eliminar Articulo
           </p>
